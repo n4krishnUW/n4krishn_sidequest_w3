@@ -12,7 +12,7 @@ Naveena Krishnabagavan
 
 ## Description
 
-This p5.js project demonstrates a simple multi-screen game structure using a state-based approach. The example includes a start screen, an instructions screen with a back button, a basic game screen, and win/lose outcome screens. The focus is on showing how to separate screens into different files, route input based on the current game state, and design simple UI elements such as buttons and keyboard controls.
+This p5.js project demonstrates a simple multi-screen interactive story game structure using a state-based approach. The game follows the journey of Truman Burbank from the film the Truman Show after leaving his artifical life in Seahaven behind and venturing into the real world. Players can choose between two options to explore the paths Truman can take. The game includes a start screen, an instructions screen, scene screens, and outcome screens. The focus is on showing how to separate screens into different files, route input based on the current game state, and design simple UI elements such as buttons and keyboard controls.
 
 ---
 
