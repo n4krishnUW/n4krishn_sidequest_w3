@@ -1,10 +1,10 @@
 ## Project Title
 
-GBDA302 Week 3 Example 1: Instructions Screen with Back button
+GBDA302 Week 3: Instructions Screen with Back button
 
 ---
 
-## Authors
+## Author
 
 Naveena Krishnabagavan
 
@@ -34,6 +34,6 @@ N/A
 
 ## GenAI
 
-The code was written by Dr. Karen Cochrane but she used GenAI to write the comments.
+The code was written by Dr. Karen Cochrane and modified by Naveena Krishnabagavan using GenAI to alter the game state.
 
 ---

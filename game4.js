@@ -1,7 +1,7 @@
 // NOTE: Do NOT add setup() or draw() in this file
 // setup() and draw() live in main.js
 // This file only defines:
-// 1) drawGame() → what the game screen looks like
+// 1) drawGame4() → what the fourth game screen looks like
 // 2) input handlers → what happens when the player clicks or presses keys
 // 3) helper functions specific to this screen
 
@@ -10,29 +10,30 @@
 // ------------------------------
 // This object stores all the information needed to draw
 // and interact with the buttons on the game screen.
-const choiceABtn = {
+const choiceABtn4 = {
   x: 400, // x position (centre of the button)
   y: 580, // y position (centre of the button)
   w: 700, // width
   h: 80, // height
   label:
-    "Choice A: Take Sylvia's hand\nand let her lead you away from the chaos.",
+    "Choice A: Watch Christof's statement together—\nyou need to hear what he has to say.",
 };
 
-const choiceBBtn = {
+const choiceBBtn4 = {
   x: 400, // x position (centre of the button)
   y: 680, // y position (centre of the button)
   w: 700, // width
   h: 80, // height
-  label: "Choice B: Push past everyone\nand find your own way alone.",
+  label:
+    "Choice B: Turn off the TV and focus\non this present moment with Sylvia.",
 };
 
 // ------------------------------
 // Main draw function for this screen
 // ------------------------------
-// drawGame() is called from main.js *only*
-// when currentScreen === "game"
-function drawGame() {
+// drawGame4() is called from main.js *only*
+// when currentScreen === "game4"
+function drawGame4() {
   // Set background colour for the game screen
   background("#9FBDD7");
 
@@ -41,14 +42,14 @@ function drawGame() {
   textSize(22);
   textAlign(CENTER, CENTER);
   text(
-    "The door closes behind you, and suddenly you're surrounded by blinding lights, screaming reporters, and chaos you've never experienced.",
+    "Late into the night, you find yourself sharing fears you've never voiced—how you don't know what's real anymore, whether any feeling you've ever had was truly yours. Sylvia listens without judgment, then shows you the messy reality of her life: old photos of failed relationships, rejection letters from law schools, a scar on her knee from a childhood bike accident.",
     width / 2,
     120,
     700,
     180,
   );
   text(
-    "Through the crowd, you see Sylvia pushing toward you, her hand outstretched, calling your name. Security struggles to hold back the mob while cameras flash and voices demand answers. Do you trust her and escape together, or face this overwhelming new world alone?",
+    "These imperfections feel more genuine than anything in Seahaven ever did. Suddenly, a news alert flashes across the TV: Christof is making a live statement in one hour.",
     width / 2,
     300,
     700,
@@ -57,13 +58,13 @@ function drawGame() {
 
   // ---- Draw the buttons ----
   // We pass the button objects to a helper function
-  drawGameButton(choiceABtn);
-  drawGameButton(choiceBBtn);
+  drawGameButton4(choiceABtn4);
+  drawGameButton4(choiceBBtn4);
 
   // ---- Cursor feedback ----
   // If the mouse is over either button, show a hand cursor
   // Otherwise, show the normal arrow cursor
-  cursor(isHover(choiceABtn) || isHover(choiceBBtn) ? HAND : ARROW);
+  cursor(isHover(choiceABtn4) || isHover(choiceBBtn4) ? HAND : ARROW);
 }
 
 // ------------------------------
@@ -71,7 +72,7 @@ function drawGame() {
 // ------------------------------
 // This function is responsible *only* for drawing the button.
 // It does NOT handle clicks or game logic.
-function drawGameButton({ x, y, w, h, label }) {
+function drawGameButton4({ x, y, w, h, label }) {
   rectMode(CENTER);
 
   // Check if the mouse is hovering over the button
@@ -102,13 +103,13 @@ function drawGameButton({ x, y, w, h, label }) {
 // Mouse input for this screen
 // ------------------------------
 // This function is called from main.js
-// only when currentScreen === "game"
-function gameMousePressed() {
+// only when currentScreen === "game4"
+function game4MousePressed() {
   // Trigger the outcome based on which button is clicked
-  if (isHover(choiceABtn)) {
-    currentScreen = "game2"; // Trust Sylvia leads to second choice
-  } else if (isHover(choiceBBtn)) {
-    currentScreen = "game3"; // Go alone leads to street scenario
+  if (isHover(choiceABtn4)) {
+    currentScreen = "game8"; // Watch statement leads to The Statement
+  } else if (isHover(choiceBBtn4)) {
+    currentScreen = "game8"; // Focus on present leads to The Statement
   }
 }
 
@@ -116,13 +117,13 @@ function gameMousePressed() {
 // Keyboard input for this screen
 // ------------------------------
 // Allows keyboard-only interaction (accessibility + design)
-function gameKeyPressed() {
+function game4KeyPressed() {
   // A key for Choice A
   if (key === "a" || key === "A") {
-    currentScreen = "game2";
+    currentScreen = "game8";
   }
   // B key for Choice B
   else if (key === "b" || key === "B") {
-    currentScreen = "game3";
+    currentScreen = "game8";
   }
 }

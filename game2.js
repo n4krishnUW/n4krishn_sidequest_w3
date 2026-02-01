@@ -1,7 +1,7 @@
 // NOTE: Do NOT add setup() or draw() in this file
 // setup() and draw() live in main.js
 // This file only defines:
-// 1) drawGame() → what the game screen looks like
+// 1) drawGame2() → what the second game screen looks like
 // 2) input handlers → what happens when the player clicks or presses keys
 // 3) helper functions specific to this screen
 
@@ -10,29 +10,28 @@
 // ------------------------------
 // This object stores all the information needed to draw
 // and interact with the buttons on the game screen.
-const choiceABtn = {
+const choiceABtn2 = {
   x: 400, // x position (centre of the button)
   y: 580, // y position (centre of the button)
   w: 700, // width
   h: 80, // height
-  label:
-    "Choice A: Take Sylvia's hand\nand let her lead you away from the chaos.",
+  label: "Choice A: Ask Sylvia about the real world\nand begin to trust her.",
 };
 
-const choiceBBtn = {
+const choiceBBtn2 = {
   x: 400, // x position (centre of the button)
   y: 680, // y position (centre of the button)
   w: 700, // width
   h: 80, // height
-  label: "Choice B: Push past everyone\nand find your own way alone.",
+  label: "Choice B: Remain guarded and question\nif this is just another set.",
 };
 
 // ------------------------------
 // Main draw function for this screen
 // ------------------------------
-// drawGame() is called from main.js *only*
-// when currentScreen === "game"
-function drawGame() {
+// drawGame2() is called from main.js *only*
+// when currentScreen === "game2"
+function drawGame2() {
   // Set background colour for the game screen
   background("#9FBDD7");
 
@@ -41,14 +40,14 @@ function drawGame() {
   textSize(22);
   textAlign(CENTER, CENTER);
   text(
-    "The door closes behind you, and suddenly you're surrounded by blinding lights, screaming reporters, and chaos you've never experienced.",
+    "Sylvia's apartment is small and quiet, filled with mismatched furniture and stacks of books about media ethics. She sets a cup of tea in front of you with shaking hands, explaining she's been fighting to free you for years, organizing protests, filing lawsuits.",
     width / 2,
     120,
     700,
     180,
   );
   text(
-    "Through the crowd, you see Sylvia pushing toward you, her hand outstretched, calling your name. Security struggles to hold back the mob while cameras flash and voices demand answers. Do you trust her and escape together, or face this overwhelming new world alone?",
+    'On her TV in the corner, news coverage shows your face with the headline "TRUMAN BREAKS FREE." You notice her chipped nail polish, a water stain on the ceiling, the reality of imperfection everywhere.',
     width / 2,
     300,
     700,
@@ -57,13 +56,13 @@ function drawGame() {
 
   // ---- Draw the buttons ----
   // We pass the button objects to a helper function
-  drawGameButton(choiceABtn);
-  drawGameButton(choiceBBtn);
+  drawGameButton2(choiceABtn2);
+  drawGameButton2(choiceBBtn2);
 
   // ---- Cursor feedback ----
   // If the mouse is over either button, show a hand cursor
   // Otherwise, show the normal arrow cursor
-  cursor(isHover(choiceABtn) || isHover(choiceBBtn) ? HAND : ARROW);
+  cursor(isHover(choiceABtn2) || isHover(choiceBBtn2) ? HAND : ARROW);
 }
 
 // ------------------------------
@@ -71,7 +70,7 @@ function drawGame() {
 // ------------------------------
 // This function is responsible *only* for drawing the button.
 // It does NOT handle clicks or game logic.
-function drawGameButton({ x, y, w, h, label }) {
+function drawGameButton2({ x, y, w, h, label }) {
   rectMode(CENTER);
 
   // Check if the mouse is hovering over the button
@@ -102,13 +101,13 @@ function drawGameButton({ x, y, w, h, label }) {
 // Mouse input for this screen
 // ------------------------------
 // This function is called from main.js
-// only when currentScreen === "game"
-function gameMousePressed() {
+// only when currentScreen === "game2"
+function game2MousePressed() {
   // Trigger the outcome based on which button is clicked
-  if (isHover(choiceABtn)) {
-    currentScreen = "game2"; // Trust Sylvia leads to second choice
-  } else if (isHover(choiceBBtn)) {
-    currentScreen = "game3"; // Go alone leads to street scenario
+  if (isHover(choiceABtn2)) {
+    currentScreen = "game4"; // Ask Sylvia leads to sharing fears
+  } else if (isHover(choiceBBtn2)) {
+    currentScreen = "game5"; // Remain guarded leads to testing her
   }
 }
 
@@ -116,13 +115,13 @@ function gameMousePressed() {
 // Keyboard input for this screen
 // ------------------------------
 // Allows keyboard-only interaction (accessibility + design)
-function gameKeyPressed() {
+function game2KeyPressed() {
   // A key for Choice A
   if (key === "a" || key === "A") {
-    currentScreen = "game2";
+    currentScreen = "game4";
   }
   // B key for Choice B
   else if (key === "b" || key === "B") {
-    currentScreen = "game3";
+    currentScreen = "game5";
   }
 }

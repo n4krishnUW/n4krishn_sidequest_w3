@@ -21,7 +21,7 @@
 //
 // We store the “name” of the current screen as a string.
 // Only one screen should be active at a time.
-let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
+let currentScreen = "start"; // "start" | "instr" | "game" | "game2" | "game3" | "game4" | "game5" | "game6" | "game7" | "game8" | "game9" | "game10" | "game11" | "game12" | "game13" | "game14" | "win" | "win1" | "win2" | "win3" | "win4" | "win5" | "win6" | "lose"
 
 // ------------------------------
 // setup() runs ONCE at the beginning
@@ -51,7 +51,26 @@ function draw() {
   if (currentScreen === "start") drawStart();
   else if (currentScreen === "instr") drawInstr();
   else if (currentScreen === "game") drawGame();
+  else if (currentScreen === "game2") drawGame2();
+  else if (currentScreen === "game3") drawGame3();
+  else if (currentScreen === "game4") drawGame4();
+  else if (currentScreen === "game5") drawGame5();
+  else if (currentScreen === "game6") drawGame6();
+  else if (currentScreen === "game7") drawGame7();
+  else if (currentScreen === "game8") drawGame8();
+  else if (currentScreen === "game9") drawGame9();
+  else if (currentScreen === "game10") drawGame10();
+  else if (currentScreen === "game11") drawGame11();
+  else if (currentScreen === "game12") drawGame12();
+  else if (currentScreen === "game13") drawGame13();
+  else if (currentScreen === "game14") drawGame14();
   else if (currentScreen === "win") drawWin();
+  else if (currentScreen === "win1") drawWin1();
+  else if (currentScreen === "win2") drawWin2();
+  else if (currentScreen === "win3") drawWin3();
+  else if (currentScreen === "win4") drawWin4();
+  else if (currentScreen === "win5") drawWin5();
+  else if (currentScreen === "win6") drawWin6();
   else if (currentScreen === "lose") drawLose();
 
   // (Optional teaching note)
@@ -76,8 +95,21 @@ function mousePressed() {
   if (currentScreen === "start") startMousePressed();
   else if (currentScreen === "instr") instrMousePressed();
   else if (currentScreen === "game") gameMousePressed();
-  // The ?.() means “call this function only if it exists”
-  // This prevents errors if a screen doesn’t implement a handler.
+  else if (currentScreen === "game2") game2MousePressed();
+  else if (currentScreen === "game3") game3MousePressed();
+  else if (currentScreen === "game4") game4MousePressed();
+  else if (currentScreen === "game5") game5MousePressed();
+  else if (currentScreen === "game6") game6MousePressed();
+  else if (currentScreen === "game7") game7MousePressed();
+  else if (currentScreen === "game8") game8MousePressed();
+  else if (currentScreen === "game9") game9MousePressed();
+  else if (currentScreen === "game10") game10MousePressed();
+  else if (currentScreen === "game11") game11MousePressed();
+  else if (currentScreen === "game12") game12MousePressed();
+  else if (currentScreen === "game13") game13MousePressed();
+  else if (currentScreen === "game14") game14MousePressed();
+  // The ?.() means "call this function only if it exists"
+  // This prevents errors if a screen doesn't implement a handler.
   else if (currentScreen === "win") winMousePressed?.();
   else if (currentScreen === "lose") loseMousePressed?.();
 }
@@ -97,7 +129,26 @@ function keyPressed() {
   if (currentScreen === "start") startKeyPressed();
   else if (currentScreen === "instr") instrKeyPressed();
   else if (currentScreen === "game") gameKeyPressed?.();
+  else if (currentScreen === "game2") game2KeyPressed?.();
+  else if (currentScreen === "game3") game3KeyPressed?.();
+  else if (currentScreen === "game4") game4KeyPressed?.();
+  else if (currentScreen === "game5") game5KeyPressed?.();
+  else if (currentScreen === "game6") game6KeyPressed?.();
+  else if (currentScreen === "game7") game7KeyPressed?.();
+  else if (currentScreen === "game8") game8KeyPressed?.();
+  else if (currentScreen === "game9") game9KeyPressed?.();
+  else if (currentScreen === "game10") game10KeyPressed?.();
+  else if (currentScreen === "game11") game11KeyPressed?.();
+  else if (currentScreen === "game12") game12KeyPressed?.();
+  else if (currentScreen === "game13") game13KeyPressed?.();
+  else if (currentScreen === "game14") game14KeyPressed?.();
   else if (currentScreen === "win") winKeyPressed?.();
+  else if (currentScreen === "win1") win1KeyPressed?.();
+  else if (currentScreen === "win2") win2KeyPressed?.();
+  else if (currentScreen === "win3") win3KeyPressed?.();
+  else if (currentScreen === "win4") win4KeyPressed?.();
+  else if (currentScreen === "win5") win5KeyPressed?.();
+  else if (currentScreen === "win6") win6KeyPressed?.();
   else if (currentScreen === "lose") loseKeyPressed?.();
 }
 

@@ -12,13 +12,13 @@
 // currentScreen === "start"
 function drawStart() {
   // Background colour for the start screen
-  background(180, 225, 220); // soft teal background
+  background("#89AAE0"); // blue background
 
   // ---- Title text ----
-  fill(30, 50, 60);
+  fill("#33435D");
   textSize(46);
   textAlign(CENTER, CENTER);
-  text("Win or Lose", width / 2, 180);
+  text("The Truman Show Epilogue", width / 2, 180);
 
   // ---- Buttons (data only) ----
   // These objects store the position/size/label for each button.
@@ -110,17 +110,17 @@ function drawButton({ x, y, w, h, label }) {
   // We also add a shadow using drawingContext (p5 lets you access the
   // underlying canvas context for effects like shadows).
   if (hover) {
-    fill(255, 200, 150, 220); // warm coral on hover
+    fill("#E0E1E1"); // slightly darker on hover
 
     // Shadow settings (only when hovered)
     drawingContext.shadowBlur = 20;
-    drawingContext.shadowColor = color(255, 180, 120);
+    drawingContext.shadowColor = color(150, 150, 150);
   } else {
-    fill(255, 240, 210, 210); // soft cream base
+    fill("#F8F9F9"); // button color
 
     // Softer shadow when not hovered
     drawingContext.shadowBlur = 8;
-    drawingContext.shadowColor = color(220, 220, 220);
+    drawingContext.shadowColor = color(180, 180, 180);
   }
 
   // Draw the rounded rectangle button
